@@ -82,7 +82,7 @@ function App() {
       <footer className="fadeInUp" style={{animationDelay: '2s'}}>
         {/* <img
           src="/icon.png"
-          alt="https://www.covid19india.org | Coronavirus cases live dashboard"
+          alt="http://cov19india.com | Coronavirus cases live dashboard"
         />*/}
 
         <h5>We stand with everyone fighting on the frontlines</h5>
