@@ -15,7 +15,9 @@ import Links from './components/links';
 import Cluster from './components/cluster';
 import FAQ from './components/faq';
 import Banner from './components/banner';
-/* import PatientDB from './components/patientdb';*/
+// import PatientDB from './components/patientdb';
+import Global from './components/global';
+import MythBuster from './components/mythBuster';
 
 const history = require('history').createBrowserHistory;
 
@@ -27,12 +29,24 @@ function App() {
       displayName: 'Home',
       animationDelayForNavbar: 0.2,
     },
-    /* {
-      pageLink: '/patientsDB',
-      view: PatientDB,
-      displayName: 'Patients DB',
-      animationDelayForNavbar: 0.3,
-    },*/
+    // {
+    //   pageLink: '/patientsDB',
+    //   view: PatientDB,
+    //   displayName: 'Patients DB',
+    //   animationDelayForNavbar: 0.3,
+    // },
+    {
+      pageLink: '/Global',
+      view: Global,
+      displayName: 'Global impact',
+      animationDelayForNavbar: 0.4,
+    },
+    {
+      pageLink: '/MythBuster',
+      view: MythBuster,
+      displayName: 'Myth Busters',
+      animationDelayForNavbar: 0.4,
+    },
     {
       pageLink: '/clusters',
       view: Cluster,
