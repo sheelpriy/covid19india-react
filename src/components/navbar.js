@@ -12,24 +12,13 @@ function Navbar(props) {
 
   if (window.location.pathname !== '/summary') {
     return (
-      <div
-        className="Navbar"
-        style={{
-          animationDelay: '0.5s',
-          height: window.location.pathname === '/clusters' ? '2.5rem' : '',
-          transition: 'all 0.3s ease-in-out',
-        }}
-      >
+      <div className="Navbar" style={styles.nav}>
         <img
           className="fadeInUp logo"
-          alt="India COVID-19 Tracker"
-          src="/icon.png"
-          style={{
-            animationDelay: '0.0s',
-            width: window.location.pathname === '/clusters' ? '1.5rem' : '',
-            height: window.location.pathname === '/clusters' ? '1.5rem' : '',
-            transition: 'all 0.3s ease-in-out',
-          }}
+          alt="India COV-19 Tracker"
+          src="/icon.webp"
+          title="cov19india.com"
+          style={styles.logo}
         />
 
         <div className="navbar-left">
@@ -53,5 +42,19 @@ function Navbar(props) {
     return <div></div>;
   }
 }
+
+const styles = {
+  nav: {
+    animationDelay: '0.5s',
+    height: window.location.pathname === '/clusters' ? '2.5rem' : '',
+    transition: 'all 0.3s ease-in-out',
+  },
+  logo: {
+    animationDelay: '0.0s',
+    width: window.location.pathname === '/clusters' ? '1.5rem' : '',
+    height: window.location.pathname === '/clusters' ? '1.5rem' : '',
+    transition: 'all 0.3s ease-in-out',
+  },
+};
 
 export default Navbar;
