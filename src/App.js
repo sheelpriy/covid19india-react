@@ -86,7 +86,7 @@ function App() {
         />*/}
 
         <h5>We stand with everyone fighting on the frontlines</h5>
-        <div className="link">
+        {/* <div className="link">
           <a href="https://github.com/covid19india">covid19india</a>
         </div>
         <a
@@ -95,7 +95,7 @@ function App() {
         >
           <Icon.GitHub />
           <span>Open Sourced on GitHub</span>
-        </a>
+        </a> */}
         <a
           className="button excel"
           href="https://bit.ly/patientdb"
