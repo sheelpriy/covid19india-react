@@ -100,7 +100,7 @@ function App() {
         />*/}
 
         <h5>We stand with everyone fighting on the frontlines</h5>
-        {/* <div className="link">
+        <div className="link">
           <a href="https://github.com/covid19india">covid19india</a>
         </div>
         <a
@@ -109,11 +109,12 @@ function App() {
         >
           <Icon.GitHub />
           <span>Open Sourced on GitHub</span>
-        </a> */}
+        </a>
         <a
           className="button excel"
           href="https://bit.ly/patientdb"
           target="_noblank"
+          style={style.hide}
         >
           <Icon.Database />
           <span>Crowdsourced Patient Database&nbsp;</span>
@@ -122,7 +123,7 @@ function App() {
           href="https://twitter.com/covid19indiaorg"
           target="_noblank"
           className="button twitter"
-          style={{justifyContent: 'center'}}
+          style={{justifyContent: 'center', display: 'none'}}
         >
           <Icon.Twitter />
           <span>View updates on Twitter</span>
@@ -131,13 +132,26 @@ function App() {
           href="https://bit.ly/covid19crowd"
           className="button telegram"
           target="_noblank"
+          style={style.hide}
         >
           <Icon.MessageCircle />
           <span>Join Telegram to Collaborate!</span>
         </a>
+        <p style={style.inspired}>Inpired by https://www.covid19india.org/</p>
       </footer>
     </div>
   );
 }
 
+const style = {
+  inspired: {
+    display: 'block',
+    fontFamily: 'sans-serif',
+    fontSize: '10px',
+    color: '#4179a9',
+  },
+  hide: {
+    display: 'none',
+  },
+};
 export default App;
