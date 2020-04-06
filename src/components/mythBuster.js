@@ -1,30 +1,37 @@
-import React from 'react';
-
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+import MbCard from './subComponents/mbCard';
+import mythsJson from '../myths.json';
 function MythBuster(props) {
-  // const [faq, setFaq] = useState([]);
+  const [myths, setMyths] = useState([]);
 
-  // useEffect(() => {
-  //   getFAQs();
-  // }, []);
+  useEffect(() => {
+    console.log('-->', mythsJson);
+    getMyths();
+  }, []);
 
-  // const getFAQs = () => {
-  //   axios
-  //     .get('https://api.covid19india.org/faq.json')
-  //     .then((response) => {
-  //       setFaq(response.data.faq);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
+  const getMyths = () => {
+    axios
+      .get('https://sheelpriy.github.io/myths.json')
+      .then((response) => {
+        console.log('data', response.data);
+        setMyths(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    // setMyths(mythsJson);
+  };
+
+  const getKey = (myth) => myth.name;
 
   return (
+    // <MbCard items={myths}></MbCard>
     <>
-      <iframe
-        src="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters"
-        height="800"
-        width="100%"
-      ></iframe>
+      {// myths.map((myth, i)=> console.log(myth))
+      myths.map(function (myth) {
+        return <MbCard key={getKey(myth)} myth={myth}></MbCard>;
+      })}
     </>
   );
 }
