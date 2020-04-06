@@ -3,7 +3,7 @@ import axios from 'axios';
 import {formatDistance} from 'date-fns';
 import {formatDate, formatDateAbsolute} from '../utils/common-functions';
 import Table from './table';
-// import Level from './level';
+import Level from './level';
 import MapExplorer from './mapexplorer';
 import TimeSeries from './timeseries';
 import Minigraph from './minigraph';
@@ -80,7 +80,7 @@ function Home(props) {
           </div>
         </div>
 
-        {/* <Level data={states} deltas={deltas} /> */}
+        <Level data={states} />
         <Minigraph timeseries={timeseries} animate={true} />
 
         <Table
