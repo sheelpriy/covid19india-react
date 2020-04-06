@@ -6,10 +6,12 @@ function Level(props) {
   const [active, setActive] = useState(0);
   const [recoveries, setRecoveries] = useState(0);
   const [deaths, setDeaths] = useState(0);
+  const [header, setHeader] = useState(props.data);
 
   useEffect(() => {
+    console.log('props', props);
     setData(props.data);
-  }, [props.data]);
+  }, [props, props.data]);
 
   useEffect(() => {
     const parseData = () => {
@@ -29,19 +31,20 @@ function Level(props) {
       setActive(active);
       setRecoveries(recoveries);
       setDeaths(deaths);
+      setHeader(props.data[0]);
     };
     parseData();
-  }, [data]);
+  }, [data, props.data]);
 
   return (
     <div className="Level fadeInUp" style={{animationDelay: '0.8s'}}>
       <div className="level-item is-cherry">
-        <h5>Confirmed</h5>
+        <h5>Confirmed </h5>
         <h4>
           [
-          {props.deltas
-            ? props.deltas.confirmeddelta >= 0
-              ? '+' + props.deltas.confirmeddelta
+          {header
+            ? header.deltaconfirmed >= 0
+              ? '+' + header.deltaconfirmed
               : '+0'
             : ''}
           ]
@@ -60,9 +63,9 @@ function Level(props) {
         <h5 className="heading">Recovered</h5>
         <h4>
           [
-          {props.deltas
-            ? props.deltas.recovereddelta >= 0
-              ? '+' + props.deltas.recovereddelta
+          {header
+            ? header.deltarecovered >= 0
+              ? '+' + header.deltarecovered
               : '+0'
             : ''}
           ]
@@ -74,9 +77,9 @@ function Level(props) {
         <h5 className="heading">Deceased</h5>
         <h4>
           [
-          {props.deltas
-            ? props.deltas.deceaseddelta >= 0
-              ? '+' + props.deltas.deceaseddelta
+          {header
+            ? header.deltadeaths >= 0
+              ? '+' + header.deltadeaths
               : '+0'
             : ''}
           ]
