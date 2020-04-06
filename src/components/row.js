@@ -81,7 +81,7 @@ function Row(props) {
 
   return (
     <React.Fragment>
-      <span
+      {/* <span
         className={`dropdown ${
           props.reveal ? 'rotateRightDown' : 'rotateDownRight'
         }`}
@@ -91,12 +91,12 @@ function Row(props) {
         }}
       >
         <Icon.ChevronDown />
-      </span>
+      </span> */}
       <tr
         className={props.total ? 'state is-total' : 'state'}
         onMouseEnter={() => props.onHighlightState?.(state, props.index)}
         onMouseLeave={() => props.onHighlightState?.()}
-        touchstart={() => props.onHighlightState?.(state, props.index)}
+        // touchstart={() => props.onHighlightState?.(state, props.index)}
         style={{background: props.index % 2 === 0 ? '#f8f9fa' : ''}}
         onClick={() => {
           handleReveal();
@@ -224,9 +224,9 @@ function Row(props) {
                   props.onHighlightDistrict?.(district, state, props.index)
                 }
                 onMouseLeave={() => props.onHighlightDistrict?.()}
-                touchstart={() =>
-                  props.onHighlightDistrict?.(district, state, props.index)
-                }
+                // touchstart={() =>
+                //   props.onHighlightDistrict?.(district, state, props.index)
+                // }
               >
                 <td style={{fontWeight: 600}}>{district}</td>
                 <td>

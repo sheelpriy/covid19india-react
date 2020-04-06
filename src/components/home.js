@@ -3,7 +3,7 @@ import axios from 'axios';
 import {formatDistance} from 'date-fns';
 import {formatDate, formatDateAbsolute} from '../utils/common-functions';
 import Table from './table';
-import Level from './level';
+// import Level from './level';
 import MapExplorer from './mapexplorer';
 import TimeSeries from './timeseries';
 import Minigraph from './minigraph';
@@ -15,7 +15,7 @@ function Home(props) {
   const [graphOption, setGraphOption] = useState(1);
   const [lastUpdated, setLastUpdated] = useState('');
   const [timeseries, setTimeseries] = useState([]);
-  const [deltas, setDeltas] = useState([]);
+  // const [deltas, setDeltas] = useState([]);
   const [timeseriesMode, setTimeseriesMode] = useState(true);
   const [timeseriesLogMode, setTimeseriesLogMode] = useState(false);
   const [regionHighlighted, setRegionHighlighted] = useState(undefined);
@@ -35,7 +35,7 @@ function Home(props) {
       setStates(response.data.statewise);
       setTimeseries(response.data.cases_time_series);
       setLastUpdated(response.data.statewise[0].lastupdatedtime);
-      setDeltas(response.data.key_values[0]);
+      // setDeltas(response.data.key_values[0]);
       setStateDistrictWiseData(stateDistrictWiseResponse.data);
       setFetched(true);
     } catch (err) {
@@ -80,7 +80,7 @@ function Home(props) {
           </div>
         </div>
 
-        <Level data={states} deltas={deltas} />
+        {/* <Level data={states} deltas={deltas} /> */}
         <Minigraph timeseries={timeseries} animate={true} />
 
         <Table
