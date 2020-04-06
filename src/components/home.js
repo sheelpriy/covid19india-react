@@ -10,6 +10,7 @@ import Minigraph from './minigraph';
 
 function Home(props) {
   const [states, setStates] = useState([]);
+  const [showMap, setshowMap] = useState(false);
   const [stateDistrictWiseData, setStateDistrictWiseData] = useState({});
   const [fetched, setFetched] = useState(false);
   const [graphOption, setGraphOption] = useState(1);
@@ -90,10 +91,14 @@ function Home(props) {
           onHighlightState={onHighlightState}
           onHighlightDistrict={onHighlightDistrict}
         />
+        <button style={styles.mapButton} onClick={() => setshowMap(!showMap)}>
+          {' '}
+          {showMap ? 'Hide Map' : 'View On Map'}
+        </button>
       </div>
 
       <div className="home-right">
-        {fetched && (
+        {fetched && showMap && (
           <React.Fragment>
             <MapExplorer
               states={states}
@@ -170,5 +175,17 @@ function Home(props) {
     </div>
   );
 }
+
+const styles = {
+  mapButton: {
+    height: '30px',
+    border: '1px solid #f5f4f4',
+    width: '98px',
+    margin: '5px auto',
+    background: '#fff',
+    boxShadow: '-2px 3px #85858e',
+    borderRadius: '3px',
+  },
+};
 
 export default Home;

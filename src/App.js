@@ -38,7 +38,7 @@ function App() {
     {
       pageLink: '/Global',
       view: Global,
-      displayName: 'Global impact',
+      displayName: 'Global',
       animationDelayForNavbar: 0.4,
     },
     {
@@ -56,7 +56,7 @@ function App() {
     {
       pageLink: '/links',
       view: Links,
-      displayName: 'Helpful Links',
+      displayName: 'Links',
       animationDelayForNavbar: 0.5,
     },
     {
