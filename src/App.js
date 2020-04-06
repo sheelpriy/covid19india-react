@@ -12,7 +12,7 @@ import './App.scss';
 import Home from './components/home';
 import Navbar from './components/navbar';
 import Links from './components/links';
-import Cluster from './components/cluster';
+// import Cluster from './components/cluster';
 import FAQ from './components/faq';
 import Banner from './components/banner';
 // import PatientDB from './components/patientdb';
@@ -47,12 +47,12 @@ function App() {
       displayName: 'Myth Busters',
       animationDelayForNavbar: 0.4,
     },
-    {
-      pageLink: '/clusters',
-      view: Cluster,
-      displayName: 'Clusters',
-      animationDelayForNavbar: 0.4,
-    },
+    // {
+    //   pageLink: '/clusters',
+    //   view: Cluster,
+    //   displayName: 'Clusters',
+    //   animationDelayForNavbar: 0.4,
+    // },
     {
       pageLink: '/links',
       view: Links,
