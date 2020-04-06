@@ -12,7 +12,11 @@ function MbCard(myth, key) {
         <h3 style={styles.buster}>
           <span style={{fontWeight: 600}}>Buster :</span> {myth.myth.answer}
         </h3>
-        <img src={'../mb-old.png'} style={styles.image}></img>
+        <img
+          src={'../mb-old.png'}
+          alt={myth.myth.name}
+          style={styles.image}
+        ></img>
       </div>
 
       {/* <div key={myth.myth.name}>{myth.myth.question}-{myth.myth.name} </div> */}
