@@ -16,7 +16,7 @@ function Navbar(props) {
         <img
           className="fadeInUp logo"
           alt="India COV-19 Tracker"
-          src="/icon.webp"
+          src="/iconn.jpeg"
           title="cov19india.com"
           style={styles.logo}
         />
