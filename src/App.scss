@@ -224,8 +224,8 @@ h6 {
 }
 
 .Home {
-  display: flex;
-  flex-direction: row;
+  // display: flex;
+  // flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
   margin-left: 5rem;
@@ -239,11 +239,13 @@ h6 {
   }
 
   .home-left {
-    margin-right: 2.5rem;
+    // margin-right: 2.5rem;
+    margin: 15px auto;
   }
 
   .home-right {
-    margin-left: 2.5rem;
+    // margin-left: 2.5rem;
+    margin: 15px auto;
   }
 }
 
@@ -1374,7 +1376,7 @@ footer {
 
   & > * {
     align-self: center;
-    width: 30rem;
+    // width: 30rem;
     margin-bottom: 1.5rem;
   }
 
@@ -1384,7 +1386,7 @@ footer {
 
   h2 {
     margin: 0;
-    font-weight: 600;
+    font-weight: 300;
     text-transform: none;
   }
 
@@ -1392,11 +1394,15 @@ footer {
     color: $gray-dark;
     margin: 0;
     margin-bottom: 0.25rem;
+    font-family: sans-serif;
+    font-weight: 300;
   }
 
   .answer {
     color: $blue;
     line-height: 1.5rem;
+    font-weight: 200;
+    font-family: sans-serif;
   }
 }
 
@@ -1686,7 +1692,6 @@ footer {
   .Links,
   .Minigraph,
   .Summary,
-  .FAQ,
   .MapExplorer {
     width: calc(100% - 2rem);
   }
@@ -1703,7 +1708,7 @@ footer {
       width: 100%;
       display: flex;
       flex-direction: column;
-      margin: 0;
+      margin: 15px auto;
     }
   }
 

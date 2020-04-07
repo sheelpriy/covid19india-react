@@ -9,7 +9,7 @@ function Level(props) {
   const [header, setHeader] = useState(props.data);
 
   useEffect(() => {
-    console.log('props', props);
+    // console.log('props', props);
     setData(props.data);
   }, [props, props.data]);
 

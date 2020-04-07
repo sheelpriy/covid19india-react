@@ -24,7 +24,7 @@ function Navbar(props) {
         <div className="navbar-left">
           {props.pages.map((page, i) => {
             return (
-              <Link to={page.pageLink} key={i}>
+              page.header && <Link to={page.pageLink} key={i}>
                 <span
                   {...navLinkProps(page.pageLink, page.animationDelayForNavbar)}
                 >

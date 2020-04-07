@@ -35,8 +35,8 @@ function Global(props) {
 
 const styles = {
   waitingMessage: {
-    'font-family': 'sans-serif',
-    'font-size': '10px',
+    "fontFamily": 'sans-serif',
+    "fontSize": '10px',
     padding: '5px 10px',
     color: '#4d5d4d',
   },

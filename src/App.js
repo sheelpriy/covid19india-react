@@ -18,6 +18,9 @@ import Banner from './components/banner';
 // import PatientDB from './components/patientdb';
 import Global from './components/global';
 import MythBuster from './components/mythBuster';
+import AboutUs from './components/aboutUs';
+import dataOnMap from './components/subComponents/dataOnMap';
+import dataOnTable from './components/subComponents/dataOnTable';
 
 const history = require('history').createBrowserHistory;
 
@@ -28,6 +31,7 @@ function App() {
       view: Home,
       displayName: 'Home',
       animationDelayForNavbar: 0.2,
+      header: true,
     },
     // {
     //   pageLink: '/patientsDB',
@@ -40,12 +44,14 @@ function App() {
       view: Global,
       displayName: 'Global',
       animationDelayForNavbar: 0.4,
+      header: true,
     },
     {
       pageLink: '/MythBuster',
       view: MythBuster,
       displayName: 'Myth Busters',
       animationDelayForNavbar: 0.4,
+      header: true,
     },
     // {
     //   pageLink: '/clusters',
@@ -58,17 +64,40 @@ function App() {
       view: Links,
       displayName: 'Links',
       animationDelayForNavbar: 0.5,
+      header: true,
     },
     {
       pageLink: '/faq',
       view: FAQ,
       displayName: 'FAQ',
       animationDelayForNavbar: 0.6,
+      header: false,
+    },
+    {
+      pageLink: '/about',
+      view: AboutUs,
+      displayName: 'About Us',
+      animationDelayForNavbar: 0.6,
+      header: true,
+    },
+    {
+      pageLink: '/map',
+      view: dataOnMap,
+      displayName: 'Data on Map',
+      animationDelayForNavbar: 0.6,
+      header: false,
+    },
+    {
+      pageLink: '/stateWise',
+      view: dataOnTable,
+      displayName: 'State Wise Data',
+      animationDelayForNavbar: 0.6,
+      header: false,
     },
   ];
 
   return (
-    <div className="App">
+    <div className="App" style={{padding: "0 5px"}}>
       <Router history={history}>
         <Route
           render={({location}) => (
@@ -101,10 +130,10 @@ function App() {
 
         <h5>We stand with everyone fighting on the frontlines</h5>
         <div className="link">
-          <a href="https://github.com/covid19india">covid19india</a>
+          <a href="https://github.com/covid19india">cov19india</a>
         </div>
         <a
-          href="https://github.com/covid19india/covid19india-react"
+          href="https://github.com/sheelpriy/covid19india-react"
           className="button github"
         >
           <Icon.GitHub />

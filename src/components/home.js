@@ -1,25 +1,36 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+// import { Link } from 'react-router-dom';
 import axios from 'axios';
-import {formatDistance} from 'date-fns';
-import {formatDate, formatDateAbsolute} from '../utils/common-functions';
-import Table from './table';
+import { formatDistance } from 'date-fns';
+import { formatDate, formatDateAbsolute } from '../utils/common-functions';
+// import Table from './table';
 import Level from './level';
-import MapExplorer from './mapexplorer';
-import TimeSeries from './timeseries';
+// import MapExplorer from './mapexplorer';
+// import TimeSeries from './timeseries';
 import Minigraph from './minigraph';
+import About from './aboutUs';
+import ViewTab from './subComponents/viewTab';
 
 function Home(props) {
   const [states, setStates] = useState([]);
-  const [showMap, setshowMap] = useState(false);
-  const [stateDistrictWiseData, setStateDistrictWiseData] = useState({});
+  // const [showMap, setshowMap] = useState(false);
+  // const [stateDistrictWiseData, setStateDistrictWiseData] = useState({});
   const [fetched, setFetched] = useState(false);
-  const [graphOption, setGraphOption] = useState(1);
+  // const [graphOption, setGraphOption] = useState(1);
   const [lastUpdated, setLastUpdated] = useState('');
   const [timeseries, setTimeseries] = useState([]);
   // const [deltas, setDeltas] = useState([]);
-  const [timeseriesMode, setTimeseriesMode] = useState(true);
-  const [timeseriesLogMode, setTimeseriesLogMode] = useState(false);
-  const [regionHighlighted, setRegionHighlighted] = useState(undefined);
+  // const [timeseriesMode, setTimeseriesMode] = useState(true);
+  // const [timeseriesLogMode, setTimeseriesLogMode] = useState(false);
+  // const [regionHighlighted, setRegionHighlighted] = useState(undefined);
+
+  // const navLinkProps = (path, animationDelay) => ({
+  //   className: `fadeInUp ${window.location.pathname === path ? 'focused' : ''}`,
+  //   style: {
+  //     animationDelay: `${animationDelay}s`,
+  //   },
+  // });
+
 
   useEffect(() => {
     if (fetched === false) {
@@ -29,50 +40,49 @@ function Home(props) {
 
   const getStates = async () => {
     try {
-      const [response, stateDistrictWiseResponse] = await Promise.all([
+      const [response] = await Promise.all([
         axios.get('https://api.covid19india.org/data.json'),
-        axios.get('https://api.covid19india.org/state_district_wise.json'),
       ]);
       setStates(response.data.statewise);
       setTimeseries(response.data.cases_time_series);
       setLastUpdated(response.data.statewise[0].lastupdatedtime);
       // setDeltas(response.data.key_values[0]);
-      setStateDistrictWiseData(stateDistrictWiseResponse.data);
+      // setStateDistrictWiseData(stateDistrictWiseResponse.data);
       setFetched(true);
     } catch (err) {
       console.log(err);
     }
   };
 
-  const onHighlightState = (state, index) => {
-    if (!state && !index) setRegionHighlighted(null);
-    else setRegionHighlighted({state, index});
-  };
-  const onHighlightDistrict = (district, state, index) => {
-    if (!state && !index && !district) setRegionHighlighted(null);
-    else setRegionHighlighted({district, state, index});
-  };
+  // const onHighlightState = (state, index) => {
+  //   if (!state && !index) setRegionHighlighted(null);
+  //   else setRegionHighlighted({ state, index });
+  // };
+  // const onHighlightDistrict = (district, state, index) => {
+  //   if (!state && !index && !district) setRegionHighlighted(null);
+  //   else setRegionHighlighted({ district, state, index });
+  // };
 
   return (
     <div className="Home">
       <div className="home-left">
-        <div className="header fadeInUp" style={{animationDelay: '0.5s'}}>
+        <div className="header fadeInUp" style={{ animationDelay: '0.5s' }}>
           <div className="header-mid">
             <div className="titles">
               <h1>India COVID-19 Tracker</h1>
-              <h6 style={{fontWeight: 600}}>A Crowdsourced Initiative</h6>
+              <h6 style={{ fontWeight: 600 }}>A Crowdsourced Initiative</h6>
             </div>
             <div className="last-update">
               <h6>Last Updated</h6>
-              <h6 style={{color: '#28a745', fontWeight: 600}}>
+              <h6 style={{ color: '#28a745', fontWeight: 600 }}>
                 {isNaN(Date.parse(formatDate(lastUpdated)))
                   ? ''
                   : formatDistance(
-                      new Date(formatDate(lastUpdated)),
-                      new Date()
-                    ) + ' Ago'}
+                    new Date(formatDate(lastUpdated)),
+                    new Date()
+                  ) + ' Ago'}
               </h6>
-              <h6 style={{color: '#28a745', fontWeight: 600}}>
+              <h6 style={{ color: '#28a745', fontWeight: 600 }}>
                 {isNaN(Date.parse(formatDate(lastUpdated)))
                   ? ''
                   : formatDateAbsolute(lastUpdated)}
@@ -84,94 +94,95 @@ function Home(props) {
         <Level data={states} />
         <Minigraph timeseries={timeseries} animate={true} />
 
-        <Table
+        <div style={styles.summary}>
+          <p>
+            Coronavirus disease (COVID-19) is an infectious pneumonia caused by a new virus, first detected in
+            Wuhan, China. The World Health Organization (WHO) declared the outbreak a Public Health Emergency
+            of International Concern on 30th January 2020.
+          </p>
+          <p>
+            The respiratory virus causing this disease spreads primarily through close contact (1 meter or 3 feet)
+            with infected persons, through the droplets generated by coughing and sneezing. Saliva and discharge
+            from the nose of an infected person also contains and can spread the virus.
+          </p>
+          <p>
+            The symptoms of this respiratory illness are quite like that of a flu. The most common are fever, dry
+            cough, tiredness, loss of smell and taste. In severe cases, an infected person may also have trouble
+            breathing, confusion, blue lips or face, and pain or pressure in the chest. However, the time of showing
+            these symptoms may vary from person to person - some may show symptoms of infections within 2-14
+            days after exposure, while some may not show any symptom at all.
+          </p>
+          <p>
+            There is no specific Covid-19 treatment available currently. However, there is no need to panic as
+            majority of people showing mild symptoms usually recover from Covid-19 in approximately 2 weeks’
+            time without special treatment, while patients with severe symptoms may take 3-6 weeks to recover.
+            Older adults, or those with underlying medical conditions, like asthma, high blood pressure, diabetes, or
+            heart disease, are at significantly higher risk of severe infection from the virus.
+          </p>
+
+          <div>
+            <p style={styles.listHead}>To protect yourself and your loved ones, it's very important to:</p>
+            <ul style={styles.list}>
+
+              <li>
+                Stay home, unless necessary to go out (eg. to purchase food items, or medicine)
+               </li>
+              <li>
+                Keep more than 1 meter or 3 feet distance from people in open spaces, like grocery stores or
+                chemist shops
+            </li>
+              <li>
+                Wash your hands often with soap and water or clean them with an alcohol-based hand sanitizer
+              </li>
+              <li>
+                Avoid touching your face, mouth, eyes, nose or ears when out or without cleaning your hands
+                properly after coming from outside
+            </li>
+              <li>
+                Cover your mouth and nose with folded elbow or tissue while coughing or sneezing. Dispose the
+                 tissue after use
+            </li>
+              <li>
+                If you feel sick or experience the symptoms of Covid-19, call the helpline. You can find the
+              helpline numbers <a href={'/links'}>here</a></li>
+            </ul>
+          </div>
+
+
+          <p>Stay safe, stay healthy!</p>
+
+        </div>
+
+        {/* <Table
           states={states}
           summary={false}
           stateDistrictWiseData={stateDistrictWiseData}
           onHighlightState={onHighlightState}
           onHighlightDistrict={onHighlightDistrict}
-        />
-        <button style={styles.mapButton} onClick={() => setshowMap(!showMap)}>
+        /> */}
+        {/* <button style={styles.mapButton} onClick={() => setshowMap(!showMap)}>
           {' '}
           {showMap ? 'Hide Map' : 'View On Map'}
-        </button>
+        </button> */}
+
+
+        {/* footer links for map and table */}
+        {/* <div style={styles.anchorWrapper}>
+          <p style={styles.anchorP}>
+            <a style={styles.anchor} href={'/map'}> Map View</a>
+          </p>
+          <p style={styles.anchorP}>
+            <a style={styles.anchor} href={'/stateWise'}> StateWise</a>
+          </p>
+          <p style={styles.anchorP}>
+            <a style={styles.anchor} href={'/about'}> About Us</a>
+          </p>
+        </div> */}
+        <ViewTab></ViewTab>
+
       </div>
 
-      <div className="home-right">
-        {fetched && showMap && (
-          <React.Fragment>
-            <MapExplorer
-              states={states}
-              stateDistrictWiseData={stateDistrictWiseData}
-              regionHighlighted={regionHighlighted}
-            />
-
-            <div
-              className="timeseries-header fadeInUp"
-              style={{animationDelay: '1.5s'}}
-            >
-              <h1>Spread Trends</h1>
-              <div className="tabs">
-                <div
-                  className={`tab ${graphOption === 1 ? 'focused' : ''}`}
-                  onClick={() => {
-                    setGraphOption(1);
-                  }}
-                >
-                  <h4>Cumulative</h4>
-                </div>
-                <div
-                  className={`tab ${graphOption === 2 ? 'focused' : ''}`}
-                  onClick={() => {
-                    setGraphOption(2);
-                  }}
-                >
-                  <h4>Daily</h4>
-                </div>
-              </div>
-
-              <div className="scale-modes">
-                <label>Scale Modes</label>
-                <div className="timeseries-mode">
-                  <label htmlFor="timeseries-mode">Uniform</label>
-                  <input
-                    type="checkbox"
-                    checked={timeseriesMode}
-                    className="switch"
-                    aria-label="Checked by default to scale uniformly."
-                    onChange={(event) => {
-                      setTimeseriesMode(!timeseriesMode);
-                    }}
-                  />
-                </div>
-                <div
-                  className={`timeseries-logmode ${
-                    graphOption !== 1 ? 'disabled' : ''
-                  }`}
-                >
-                  <label htmlFor="timeseries-logmode">Logarithmic</label>
-                  <input
-                    type="checkbox"
-                    checked={graphOption === 1 && timeseriesLogMode}
-                    className="switch"
-                    disabled={graphOption !== 1}
-                    onChange={(event) => {
-                      setTimeseriesLogMode(!timeseriesLogMode);
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <TimeSeries
-              timeseries={timeseries}
-              type={graphOption}
-              mode={timeseriesMode}
-              logMode={timeseriesLogMode}
-            />
-          </React.Fragment>
-        )}
-      </div>
+      <About></About>
     </div>
   );
 }
@@ -186,6 +197,37 @@ const styles = {
     boxShadow: '-2px 3px #85858e',
     borderRadius: '3px',
   },
+  summary: {
+    lineHeight: "20px",
+    fontWeight: "inherit",
+    fontFamily: "sans-serif"
+  },
+  listHead:{
+    background: "#9fd5fb",
+    padding: "10px",
+    marginBottom: "0px",
+    marginTop: "30px"
+  },
+  list: {
+    padding: "10px 20px",
+    marginTop:0
+  },
+  anchor: {
+    textDecoration: "none",
+    color: "#123f5f",
+    fontFamily: "sans-serif",
+    fontWeight: "500"
+  },
+  anchorWrapper: {
+    display: "flex",
+    flexDirection: "row",
+    textAlign: "center",
+    background: "#f4f7fb",
+    marginTop: "15px"
+  },
+  anchorP: {
+    width: "33%"
+  }
 };
 
 export default Home;
