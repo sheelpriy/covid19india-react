@@ -17,7 +17,7 @@ function Home(props) {
    // const [deltas, setDeltas] = useState([]);
 //    const [timeseriesMode, setTimeseriesMode] = useState(true);
 //    const [timeseriesLogMode, setTimeseriesLogMode] = useState(false);
-//    const [regionHighlighted, setRegionHighlighted] = useState(undefined);
+   const [regionHighlighted, setRegionHighlighted] = useState(undefined);
 
 //   const navLinkProps = (path, animationDelay) => ({
 //     className: `fadeInUp ${window.location.pathname === path ? 'focused' : ''}`,
@@ -50,14 +50,14 @@ function Home(props) {
     }
   };
 
-//   const onHighlightState = (state, index) => {
-//     if (!state && !index) setRegionHighlighted(null);
-//     else setRegionHighlighted({state, index});
-//   };
-//   const onHighlightDistrict = (district, state, index) => {
-//     if (!state && !index && !district) setRegionHighlighted(null);
-//     else setRegionHighlighted({district, state, index});
-//   };
+  const onHighlightState = (state, index) => {
+    if (!state && !index) setRegionHighlighted(null);
+    else setRegionHighlighted({state, index});
+  };
+  const onHighlightDistrict = (district, state, index) => {
+    if (!state && !index && !district) setRegionHighlighted(null);
+    else setRegionHighlighted({district, state, index});
+  };
 
 
   return (
