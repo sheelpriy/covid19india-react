@@ -97,7 +97,9 @@ function Home(props) {
         <DataOnMap></DataOnMap>
 
         <div style={styles.summary}>
-          <h2>Overview</h2>
+          <br></br>
+          <br></br>
+          <h1 style={{textAlign: "center"}}>Overview</h1>
           <p>
             Coronavirus disease (COVID-19) is an infectious pneumonia caused by a new virus, first detected in
             Wuhan, China. The World Health Organization (WHO) declared the outbreak a Public Health Emergency
