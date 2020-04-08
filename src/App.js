@@ -167,6 +167,7 @@ function App() {
           <span>Join Telegram to Collaborate!</span>
         </a>
         <p style={style.inspired}>Inpired by https://www.covid19india.org/</p>
+      
       </footer>
     </div>
   );

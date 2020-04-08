@@ -10,7 +10,7 @@ import Level from './level';
 import Minigraph from './minigraph';
 import About from './aboutUs';
 import ViewTab from './subComponents/viewTab';
-import DataOnMap  from './subComponents/dataOnMap'
+import DataOnMap from './subComponents/dataOnMap'
 
 function Home(props) {
   const [states, setStates] = useState([]);
@@ -99,7 +99,7 @@ function Home(props) {
         <div style={styles.summary}>
           <br></br>
           <br></br>
-          <h1 style={{textAlign: "center"}}>Overview</h1>
+          <h1 style={{ textAlign: "center" }}>Overview</h1>
           <p>
             Coronavirus disease (COVID-19) is an infectious pneumonia caused by a new virus, first detected in
             Wuhan, China. The World Health Organization (WHO) declared the outbreak a Public Health Emergency
@@ -156,6 +156,11 @@ function Home(props) {
 
           <p>Stay safe, stay healthy!</p>
 
+
+          <br></br>
+          <a className={'twitter-timeline'} href="https://twitter.com/Cov19India?ref_src=twsrc%5Etfw">Tweets by Cov19India</a>
+          <div id='tweet'></div>
+
         </div>
 
         {/* <Table
@@ -207,7 +212,7 @@ const styles = {
     fontWeight: "inherit",
     fontFamily: "sans-serif"
   },
-  listHead:{
+  listHead: {
     background: "#9fd5fb",
     padding: "10px",
     marginBottom: "0px",
@@ -215,7 +220,7 @@ const styles = {
   },
   list: {
     padding: "10px 20px",
-    marginTop:0
+    marginTop: 0
   },
   anchor: {
     textDecoration: "none",
