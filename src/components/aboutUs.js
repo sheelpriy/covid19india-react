@@ -47,7 +47,7 @@ function AboutUs(props) {
         <h2 className="question">What Happens If You Get Coronavirus?</h2>
         <h2 className="answer"> Check out this impressive animation video to understand how Corona virus act on your body.</h2>
       </div>
-      <div style={{width:"500px", margin:" 15px auto"}} >
+      <div className="youtube" style={{margin:" 15px auto"}} >
         <iframe width="100%" height="300px" src="https://www.youtube.com/embed/5DGwOJXSxqg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </div>
     </div>

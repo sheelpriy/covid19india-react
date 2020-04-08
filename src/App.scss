@@ -1404,6 +1404,9 @@ footer {
     font-weight: 200;
     font-family: sans-serif;
   }
+  .youtube {
+    width: 500px;
+  }
 }
 
 .PatientsDB {
@@ -1462,10 +1465,7 @@ footer {
     }
   }
 
-  .youtube {
-    width:"500px"
-  }
-
+  
   /*
   .patient-card {
     padding: 0.5rem;
@@ -1801,7 +1801,7 @@ footer {
     margin-right: 1.25rem;
   }
   .youtube {
-    width:"400px !important"
+    width: 400px !important;
   }
 }
 
