@@ -63,9 +63,12 @@ const styles = {
     textAlign: "center"
   },
   tweet:{
-    maxHeight:"400px",
+    maxHeight:"600px",
     overflow:"auto",
-    margin:"15px auto"
+    margin:"15px auto",
+    border: "1px #f5f5f5 solid",
+    borderRadius: "3px",
+    boxShadow: "1px 2px #a8a9ab"
   }
 }
 
