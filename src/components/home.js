@@ -10,6 +10,7 @@ import Level from './level';
 import Minigraph from './minigraph';
 import About from './aboutUs';
 import ViewTab from './subComponents/viewTab';
+import DataOnMap  from './subComponents/dataOnMap'
 
 function Home(props) {
   const [states, setStates] = useState([]);
@@ -93,8 +94,10 @@ function Home(props) {
 
         <Level data={states} />
         <Minigraph timeseries={timeseries} animate={true} />
+        <DataOnMap></DataOnMap>
 
         <div style={styles.summary}>
+          <h2>Overview</h2>
           <p>
             Coronavirus disease (COVID-19) is an infectious pneumonia caused by a new virus, first detected in
             Wuhan, China. The World Health Organization (WHO) declared the outbreak a Public Health Emergency
