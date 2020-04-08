@@ -129,10 +129,10 @@ function App() {
         />*/}
 
         <h5>We stand with everyone fighting on the frontlines</h5>
-        <div className="link">
-          <a href="https://github.com/covid19india">cov19india</a>
+        <div className="link" title="say hello to sheelpriy">
+          <a href="https://github.com/sheelpriy/covid19india-react">cov19india</a>
         </div>
-        <a
+        <a title="say hello to sheelpriy"
           href="https://github.com/sheelpriy/covid19india-react"
           className="button github"
         >
