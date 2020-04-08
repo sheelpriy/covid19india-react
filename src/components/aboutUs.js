@@ -68,7 +68,8 @@ const styles = {
     margin:"15px auto",
     border: "1px #f5f5f5 solid",
     borderRadius: "3px",
-    boxShadow: "1px 2px #a8a9ab"
+    boxShadow: "1px 2px #a8a9ab",
+    display: "none"
   }
 }
 
