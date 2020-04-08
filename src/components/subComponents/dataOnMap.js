@@ -142,7 +142,7 @@ function DataOnMap(props) {
                     </React.Fragment>
                 )}
             </div>
-            <ViewTab></ViewTab>
+            {props.showTab && <ViewTab></ViewTab>}
         </div>
     );
 }

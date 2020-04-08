@@ -1718,7 +1718,8 @@ footer {
 
   .link,
   .faq {
-    width: calc(100% - 2rem);
+    // width: calc(100% - 2rem);
+    padding: 0 10px;
   }
 
   .Navbar {

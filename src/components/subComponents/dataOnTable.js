@@ -99,7 +99,7 @@ function Home(props) {
           onHighlightDistrict={onHighlightDistrict}
         />
       </div>
-      <ViewTab></ViewTab>
+      {props.showTab && <ViewTab></ViewTab>}
     </div>
   );
 }

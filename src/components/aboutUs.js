@@ -50,6 +50,9 @@ function AboutUs(props) {
       <div className="youtube" style={{margin:" 15px auto"}} >
         <iframe width="100%" height="300px" src="https://www.youtube.com/embed/5DGwOJXSxqg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </div>
+      <div id='tweet' className="youtube" style={styles.tweet}>
+          <a className={'twitter-timeline'} data-tweet-limit="10" href="https://twitter.com/Cov19India?ref_src=twsrc%5Etfw">Tweets by Cov19India</a>
+          </div>
     </div>
     // <p>lets see what happens now. asfkskfhs dfksdafhlshdf sfjkasldfhashdf s fasdhjkf</p>
   );
@@ -58,6 +61,11 @@ function AboutUs(props) {
 const styles = {
   center: {
     textAlign: "center"
+  },
+  tweet:{
+    maxHeight:"400px",
+    overflow:"auto",
+    margin:"15px auto"
   }
 }
 
