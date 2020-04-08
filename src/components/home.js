@@ -158,7 +158,7 @@ function Home(props) {
 
 
           <br></br>
-          <a className={'twitter-timeline'} href="https://twitter.com/Cov19India?ref_src=twsrc%5Etfw">Tweets by Cov19India</a>
+          <a className={'twitter-timeline'} data-tweet-limit="5" href="https://twitter.com/Cov19India?ref_src=twsrc%5Etfw">Tweets by Cov19India</a>
           <div id='tweet'></div>
 
         </div>

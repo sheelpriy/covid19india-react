@@ -23,7 +23,7 @@ function AboutUs(props) {
 
   return (
     <div className="FAQ">
-      <h1>About Us</h1>
+      <h1 style={styles.center}>About Us</h1>
       {info.map((faq, index) => {
         return (
           <div
@@ -47,12 +47,18 @@ function AboutUs(props) {
         <h2 className="question">What Happens If You Get Coronavirus?</h2>
         <h2 className="answer"> Check out this impressive animation video to understand how Corona virus act on your body.</h2>
       </div>
-      <div style={{ maxWidth: '90%' }}>
-        <iframe width="90%" max-height="315" src="https://www.youtube.com/embed/5DGwOJXSxqg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      <div style={{width:"500px", margin:" 15px auto"}} >
+        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/5DGwOJXSxqg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </div>
     </div>
     // <p>lets see what happens now. asfkskfhs dfksdafhlshdf sfjkasldfhashdf s fasdhjkf</p>
   );
+}
+
+const styles = {
+  center: {
+    textAlign: "center"
+  }
 }
 
 export default AboutUs;

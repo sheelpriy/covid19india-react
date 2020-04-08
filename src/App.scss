@@ -1375,7 +1375,7 @@ footer {
   min-height: 30rem;
 
   & > * {
-    align-self: center;
+    // align-self: center;
     // width: 30rem;
     margin-bottom: 1.5rem;
   }
@@ -1460,6 +1460,10 @@ footer {
       font-weight: 900;
       color: $pblue;
     }
+  }
+
+  .youtube {
+    width:"500px"
   }
 
   /*
@@ -1795,6 +1799,9 @@ footer {
 
   .table-fineprint {
     margin-right: 1.25rem;
+  }
+  .youtube {
+    width:"400px !important"
   }
 }
 
